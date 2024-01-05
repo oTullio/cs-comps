@@ -1,0 +1,104 @@
+Bandit exercises day 1 notes
+Oliver Tullio
+Jan 4, 2023
+
+Level 0:
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+bandit0
+
+0 -> 1:
+cat readme
+exit
+
+1 -> 2: 
+ssh bandit1@bandit.labs.overthewire.org -p 2220
+NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+cat ./-
+exit
+
+2 -> 3:
+ssh bandit2@bandit.labs.overthewire.org -p 2220
+rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+cat "spaces in this filename"
+exit
+
+3->4:
+ssh bandit3@bandit.labs.overthewire.org -p 2220
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+cd inhere
+ls -a
+cat .hidden
+exit
+
+4->5
+ssh bandit4@bandit.labs.overthewire.org -p 2220
+2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+cd inhere
+cat ./*
+cat ./-file07
+    // humans love the number 7, don't they. So good at being "random"...
+exit
+
+5->6
+ssh bandit5@bandit.labs.overthewire.org -p 2220
+lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+find -readable -size 1033c ! -executable
+cat ./maybehere07/.file2
+
+6->7
+ssh bandit6@bandit.labs.overthewire.org -p 2220
+P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU 
+// discard stderr with this at the end: 2>/dev/null
+// ah gotta start the find at / rather than the home directory
+find / -size 33c -group bandit6 -user bandit7 2>/dev/null
+cat /var/lib/dpkg/info/bandit7.password
+
+7->8
+ssh bandit7@bandit.labs.overthewire.org -p 2220
+z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+grep -e "millionth" data.txt
+// grep -e gets each line containing the given string 
+
+8->9 
+ssh bandit8@bandit.labs.overthewire.org -p 2220
+TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+sort data.txt | uniq -u data.txt // pipes! computer systems!
+// uniq -u only prints lines unique from their neighbors so gotta sort first
+
+9->10
+ssh bandit9@bandit.labs.overthewire.org -p 2220
+EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+// strings gives only human-readable strings at least 4 chars long
+strings data.txt | grep -e "="
+
+10->11
+ssh bandit10@bandit.labs.overthewire.org -p 2220
+G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+base64 -d data.txt // decodes base64
+
+11->12
+ssh bandit11@bandit.labs.overthewire.org -p 2220
+6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+12->13
+ssh bandit12@bandit.labs.overthewire.org -p 2220
+JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+mkdir /tmp/oliver123
+cp data.txt /tmp/oliver123
+cd /tmp/oliver123
+xxd -r data.txt > hexdump.file // make a hexdump
+file hexdump.file // see how it was compressed
+// oh my then do a LOT of unpacking with the following commands:
+mv hexdump.file hex.gz // gzip requires .gz file extension? 
+gzip -d hex.gz
+file hex
+bzip2 -d hex
+file hex.out
+tar xf hex2
+file hex2 // etc., use whichever unpack is needed
+rm -rf /tmp/oliver123 // clean up after myself!
+
+13->14
+ssh bandit13@bandit.labs.overthewire.org -p 2220
+wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
