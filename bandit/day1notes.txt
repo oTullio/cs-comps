@@ -37,12 +37,15 @@ cd inhere
 cat ./*
 cat ./-file07
     // humans love the number 7, don't they. So good at being "random"...
+    // file ./-* is a nicer solution, tells you which is ASCII text
 exit
 
 5->6
 ssh bandit5@bandit.labs.overthewire.org -p 2220
 lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
-find -readable -size 1033c ! -executable
+find -readable -size 1033c ! -executable 
+    // ahh learned in class the readable flag here is redundant
+    // it only looks for read PERMISSIONS
 cat ./maybehere07/.file2
 
 6->7
@@ -102,3 +105,54 @@ rm -rf /tmp/oliver123 // clean up after myself!
 13->14
 ssh bandit13@bandit.labs.overthewire.org -p 2220
 wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+// okay this one confused me for a bit, we have to ssh to bandit 14 FROM bandit13, using the key provided
+ssh -i sshkey.private bandit14@localhost -p 2220
+cat /etc/bandit_pass/bandit14 // then we can just read the file
+
+14->15
+ssh bandit14@bandit.labs.overthewire.org -p 2220
+fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+// nc localhost 30000
+// [paste password here]
+// nc [host] [port]
+// wait for stdin / keyboard input, send it along to server
+// print anything the server sends back
+
+15->16
+ssh bandit15@bandit.labs.overthewire.org -p 2220
+jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+ncat --ssl localhost 30001
+
+16->17
+ssh bandit16@bandit.labs.overthewire.org -p 2220
+JQttfApK4SeyHwDlI9SXGR50qclOAil1
+// This one confused me so I had to look it up? I wanted to do "nmap -A localhost -p 31000–31900" but it gave errors
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+
