@@ -1,0 +1,42 @@
+Natas exercises notes
+Oliver Tullio
+January 2023
+
+0->1
+Found in html comments:
+<!--The password for natas1 is g9D9cREhslqBKtcA2uocGHPfMZVzeFK6 -->
+
+1->2
+Also html comments (inspect tool)
+<!--The password for natas2 is h4ubbcXrWqsTo7GGnnUMLppXbOogfBZ7 -->
+
+2->3
+Follow the /files/image to /files ot see a list!
+Then there's a users file containing natas3:G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q
+
+3->4
+The hint in the comments on the page says "not even Google can find it," so viewing
+robots.txt gave us the hint to go to /s3cr3t/ where a users file was found with
+natas4 : tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm
+
+4->5
+Site says we need to come from natas5, so I installed an http referrer modifier
+from the chrome web store which allowed me to spoof my referrer to natas5.
+// ah you can also use burpsuite
+Z0NsrtIkJoKALBCLi5eqFfcRN82Au2oD
+
+5->6
+
+
+
+Burpsuite captures the request from my browser and doesn't yet send it along
+Burpsuite listens on port 8080 as a proxy
+
+<?php 
+    echo "Hello there";
+?> // the OUTPUT of this PROGRAM (to stdout) goes to the client; you don't see the code you see the output
+   // Unless you forgot to configure your server properly in which case it just sends it as a text file
+
+// php always (probably) hashes arrays, it usually doesn't allocate contiguous space
+// A lot of the hacker's job is to guess what the php looks like and try to subvert it in that way
+

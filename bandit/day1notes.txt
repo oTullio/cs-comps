@@ -1,6 +1,6 @@
-Bandit exercises day 1 notes
+Bandit exercises notes
 Oliver Tullio
-Jan 4, 2023
+January 2023
 
 Level 0:
 ssh bandit0@bandit.labs.overthewire.org -p 2220
@@ -155,4 +155,48 @@ YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
 dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
 vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
+
+
+
+21 -> 22
+// cron
+// * * * * * means do this every minute
+// as bandit 22
+// 644 is in OCTAL and it's permissions so that's read/write/execute
+// 110 100 100
+// rw- r-- r--
+// cat /etc/bandit_pass/bandit22 > /tmp/[stuff] // this is the password we want! And it's been put there in tmp
+
+
+
+// |, >, <, 
+// cat, ls -alh, file, cd, man, exit
+// nmap, ssh, openssl, ping
+// permissions (chmod, chown, ls -l)
+// nc -lvnp 4444 -> listens on port 4444
+// vim has within it the convenience to invoke a unix shell
+// So if you run vim as root, if it was "setuid", then you're running the shell as root which is very insecure!
+// setuid
+// ways to make unix insecure:
+// badly set permissions
+// openly available passwords
+// crackable/guessable passwords
+// no limit to number of password guesses
+// Not changing defaults (kali/kali for example)
+
+// Because lord knows we need the full power of linux on our thermostats :D
+// the cheapest ones have passwords that you can't change, the expensive ones nobody changes
+
+// lol if you're a normal programmer you push your config file with hardcoded credentials in it and push it to your github
+// git now runs a program to look for those lol and they found MILLIONS
+// oh now I just git remove and we're all good right? :D (no)
+
+// git related stuff: secrets in old commits
+// secrets in tags and log messages
+
+
+// lo = loopback = localhost (communicate with your own computer)
+// eth0 = generic network interface (ethernet) = refers to some sort of virtual machine thing (not just ethernet)
+//      associated with a MAC address (medium access control)
+//      inet gives ipv4 address and an ipv6 
 

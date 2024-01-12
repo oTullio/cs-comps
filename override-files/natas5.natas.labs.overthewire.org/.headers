@@ -1,0 +1,11 @@
+[
+  {
+    "applyTo": "index.html",
+    "headers": [
+      {
+        "name": "set-cookie",
+        "value": "loggedin=1"
+      }
+    ]
+  }
+]
