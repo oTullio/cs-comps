@@ -1,0 +1,30 @@
+The Migraines:
+
+Launched VMWare
+New VM, custom (advanced)
+Ubuntu 64 bit
+Open VMDK
+Convert existing virtual disk to newer format? - Yes
+Cannot connect sata0:1
+You do not have write access to a partition - Allow
+SMBus host controller not enabled! 
+Failed to start Remount Root and Kernel File Systems
+Failed to activate swap /swapfile
+Failed to start Network Name Resolution 
+
+nebuchadnezzar (on our other computer):
+
+Open a virtual machine -> target1.ovf
+Launched! 
+Whaa! Primary IP address: Network information not available
+log in: Oliver / cake
+Internet access works though
+terminal: ip addr - 192.168.198.132
+
+
+nebuchadnezzar (again):
+Import vmdk instructions
+error: attempt to read or write outsdie of disk 'hd0'
+Same errors as above when attempting Migranes install
+From VMWare: "Install Ubuntu as you would on a physical computer. When you are done and the operating systyem boots up, click "I finished installing" 
+
