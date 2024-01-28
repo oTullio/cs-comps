@@ -28,3 +28,13 @@ error: attempt to read or write outsdie of disk 'hd0'
 Same errors as above when attempting Migranes install
 From VMWare: "Install Ubuntu as you would on a physical computer. When you are done and the operating systyem boots up, click "I finished installing" 
 
+- followed instruction on how to import VM from .vmdk files
+- after "Use an existing virtual disk" step, choose keep existing format
+- the VM is running, login with slab/slab
+- config .yaml file and reboot
+- can not login with slab/slab. Ubuntu on this VM doesn't take in any input.
+- suspect the server might be running, even though we can't login.
+- tried host scan (nmap -sn 172.16.41.0/24)
+	- Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-01-26 12:19 EST
+	- Nmap done: 256 IP addresses (0 hosts up) scanned in 104.24 seconds
+- No host is running :(
