@@ -1,0 +1,13 @@
+Bleeding Privileged Credentials From the Heart
+Oliver Tullio and Michael Xia
+
+This project is primarily focused on prying open the heartbleed vulnerability, a bug in the widely used open source software OpenSSL. Using Heartbleed, an attacker can access privileged data such as session cookies from a server, which in our example gives access to a database containing improperly encrypted credentials. 
+
+Brief steps:
+Use Heartbleed to dump server memory containing session cookies
+Use session cookies to log in as unprivileged user
+Use unprivileged access to extract encrypted data from a database
+Brute force crack open database on local machine to acquire root credentials
+
+More in depth info on where we’re at w/ screenshots:
+https://docs.google.com/document/d/1sTwuXhjtrIuNqqsXBKa5jcusRzaHSISvQTGk9RwsxhQ/edit?usp=sharing
