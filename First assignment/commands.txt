@@ -1,0 +1,8 @@
+ubuntu: otullio / cake
+
+// edit the default filepath
+sudo mousepad /etc/apache2/apache2.conf
+
+// tell apache to run on launch
+sudo update-rc.d apache2 defaults
+
